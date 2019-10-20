@@ -4,6 +4,7 @@
 
 
 $primary-color: #F2F1EF;
+$secondary-color: #fff;
 $body-font: "Jost";
 
 
@@ -15,9 +16,37 @@ body {
 
 
 header {
+    z-index: 99;
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    position:fixed;
+    top: 0;
+    left: 0;
+
+    div.burger-menu {
+        padding: 30px;
+        cursor: pointer;
+
+        img {
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            user-drag: none;
+        }
+    }
+
+}
+
+div.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 100vh;
+    background-color: $secondary-color;
+    transform: translateX(50vw);
 }
 
 main {
