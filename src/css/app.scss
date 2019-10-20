@@ -27,6 +27,7 @@ header {
     div.burger-menu {
         padding: 30px;
         cursor: pointer;
+        transition: transform 0.3s ease;
 
         img {
             -webkit-user-drag: none;
@@ -35,6 +36,10 @@ header {
             -o-user-drag: none;
             user-drag: none;
         }
+    }
+
+    div.burger-menu.active {
+        transform: rotate(-45deg)
     }
 
 }
@@ -46,7 +51,12 @@ div.menu {
     width: 50vw;
     height: 100vh;
     background-color: $secondary-color;
-    transform: translateX(50vw);
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+}
+
+div.menu.open {
+    transform: translateX(0);
 }
 
 main {
