@@ -1,0 +1,14 @@
+
+@import "reset";
+@import "typography";
+
+
+$primary-color: blue;
+$body-font: "Jost";
+
+
+body {
+    background-color: $primary-color;
+    font-family: $body-font;
+    font-size: 32px;
+}
