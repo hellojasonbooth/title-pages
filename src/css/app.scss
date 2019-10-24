@@ -166,3 +166,17 @@ main {
     }
 
 }
+
+div.stickers {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 100vh;
+    width: 100vw;
+}
+
+div.stickers img {
+    position: absolute;
+    transform: translate(-50%, -50%)
+}
