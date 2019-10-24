@@ -2,21 +2,25 @@
 @import "reset";
 @import "typography";
 
+@import url("https://use.typekit.net/iyk0rzd.css");
+
 
 $primary-color: #F2F1EF;
 $secondary-color: #fff;
-$body-font: "Jost";
+$body-font: "neue-haas-grotesk-display";
 
 
 body {
     background-color: $primary-color;
-    font-family: $body-font;
-    font-size: 32px;
+    font-family: neue-haas-grotesk-display;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 1.75px;
 }
 
 
 header {
-    z-index: 99;
+    z-index: 999;
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -25,7 +29,7 @@ header {
     left: 0;
 
     div.burger-menu {
-        padding: 30px;
+        padding: 40px;
         cursor: pointer;
         transition: transform 0.3s ease;
 
@@ -53,6 +57,24 @@ div.menu {
     background-color: $secondary-color;
     transform: translateX(100%);
     transition: transform 0.5s ease;
+    padding: 40px;
+    overflow: scroll;
+    z-index: 998;
+
+    h2 {
+        text-transform: uppercase;
+        margin-bottom: 40px;
+    }
+
+    p {
+        margin-bottom: 40px;
+
+        span {
+            font-family: p22-mackinac-pro, serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    }
 }
 
 div.menu.open {
