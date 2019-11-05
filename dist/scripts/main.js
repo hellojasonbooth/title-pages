@@ -3,7 +3,8 @@
 
 
 // menu toggler
-const menuToggleTag = document.querySelector('div.burger-menu')
+const burgerTag = document.querySelector('div.burger-menu')
+const menuToggleTag = document.querySelector('header')
 // menu
 const menuTag = document.querySelector('div.menu')
 
@@ -11,11 +12,15 @@ const menuTag = document.querySelector('div.menu')
 menuToggleTag.addEventListener('click', function(){
    //
    menuTag.classList.toggle('open')
-   menuToggleTag.classList.toggle('active')
+   burgerTag.classList.toggle('active')
 
    // this is where we can add the blur to elements
    // when menu is open and remove the blur when
    // menu is closed
+
+   // if (menuToggleTag.classList.contains('active')) {
+
+   // }
 
 })
 
@@ -32,8 +37,6 @@ const stickers = [
 const stickerTag = document.querySelector("div.stickers")
 
 // const drawAreaTag = document.querySelector("main section.draw-area")
-
-
 
 const addSticker = function (x, y) {
 
@@ -53,7 +56,6 @@ const addSticker = function (x, y) {
    if (number > stickers.length - 1) {
       number = 0
    }
-
 
 
 }

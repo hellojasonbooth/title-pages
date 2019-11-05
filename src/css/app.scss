@@ -22,16 +22,18 @@ body {
 
 header {
     z-index: 999;
-    display: flex;
-    justify-content: flex-end;
     position: fixed;
     top: 0;
     right: 0;
-    padding: 40px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
 
     div.burger-menu {
-        cursor: pointer;
+        height: 30px;
+        position: absolute;
         transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transform: translate(-50%, 0%);
 
         img {
             -webkit-user-drag: none;
@@ -40,10 +42,25 @@ header {
             -o-user-drag: none;
             user-drag: none;
         }
+
+        div.burger-line {
+            width: 30px;
+            height: 2px;
+            background-color: black;
+        }
+
+        .line-one {
+            transform: rotate(-90deg);
+        }
+
+        .line-two {
+            transform: translateY(-2px);
+        }
+
     }
 
     div.burger-menu.active {
-        transform: rotate(-45deg)
+        transform: rotate(-45deg) translateY(-6px);
     }
 
 }
