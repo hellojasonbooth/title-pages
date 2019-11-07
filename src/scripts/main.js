@@ -1,4 +1,3 @@
-// lets put some code here
 
 
 // stickers
@@ -24,7 +23,6 @@ const addSticker = function (x, y) {
    img.style.transform = "rotate(" + randomNum + "deg) translateX(" + (-50) + "%) translateY(" + (-50) + "%)"
    stickerTag.appendChild(img)
 
-   // remove half the window width
    img.style.left = x + "px"
    img.style.top = y + "px"
 
