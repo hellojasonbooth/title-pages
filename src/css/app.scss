@@ -9,6 +9,7 @@
 $primary-color: #F2F1EF;
 $secondary-color: #fff;
 $black-color: #000;
+$select-color: rgba(0, 0, 0, 0.26);
 $body-font: "neue-haas-grotesk-display";
 
 
@@ -20,6 +21,13 @@ body {
     letter-spacing: 1.75px;
     line-height: 1.225;
 }
+
+::selection {
+    background: $select-color; /* WebKit/Blink Browsers */
+  }
+  ::-moz-selection {
+    background: $select-color; /* Gecko Browsers */
+  }
 
 img {
     -webkit-user-drag: none;
