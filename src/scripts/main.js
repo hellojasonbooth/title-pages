@@ -60,7 +60,7 @@ menuToggleTag.addEventListener('click', function(){
    // when menu is open and remove the blur when
    // menu is closed
 
-   const blurredImageTag = document.querySelectorAll('img, h1')
+   const blurredImageTag = document.querySelectorAll('img')
 
    blurredImageTag.forEach(tag => {
 
@@ -72,8 +72,25 @@ menuToggleTag.addEventListener('click', function(){
 
      })
 
+})
 
+
+
+// animate the footer up on page load
+// with a delay
+
+const footerTag = document.querySelector('footer')
+
+document.addEventListener("DOMContentLoaded", function(event) {
+
+   setTimeout(function () {
+    
+      footerTag.classList.add('animated')
+    
+   }, 1100)
 
 })
+
+
 
 

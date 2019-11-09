@@ -35,6 +35,12 @@ img {
     -moz-user-drag: none;
     -o-user-drag: none;
     user-drag: none;
+
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 p {
@@ -199,8 +205,11 @@ main {
             width: 402px;
 
             h1 {
-                max-width: 402px;
+                max-width: 428px;
                 transition: opacity 0.2s ease;
+                display: flex;
+                overflow: hidden;
+                padding: 20px;
             }
 
             h1.logo {
@@ -230,6 +239,13 @@ main {
 
     }
 
+}
+
+h1.logo span:nth-child(1),
+h1.logo span:nth-child(2),
+h1.logo span:nth-child(3),
+h1.logo span:nth-child(4) {
+    margin-right:5px;
 }
 
 div.stickers {
@@ -270,6 +286,8 @@ footer {
     font-weight: 500;
     padding: 40px 20px;
     letter-spacing: 1px;
+    transform: translate3d(0, 100%, 0);
+    transition: transform 1.2s cubic-bezier(.72,0,.01,1);
 
     h3 {
         text-transform: uppercase;
@@ -281,5 +299,8 @@ footer {
         text-decoration: underline;
     }
 
+}
 
+footer.animated {
+    transform: translate3d(0, 0%, 0);
 }

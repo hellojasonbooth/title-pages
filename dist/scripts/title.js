@@ -93,45 +93,14 @@ updateParallaxItem()
 
 
 
-// change logos inner html on hover to a different logo
-// and replace it to the original on mouse off
+// here we can animate the title on page load
+// each element is set up to animate with a delay
+const pageTitleAnimate = document.querySelectorAll('div.logo-area h1.main-logo span')
 
-// const logoAreaTag = document.querySelector('div.logo-area')
-// const logoTag = document.querySelector('section h1.logo')
+delay = 0
 
-// logoAreaTag.addEventListener('mouseover', function (){
-
-//     if (logoTag.classList.contains('hovered')){
-//         logoTag.innerHTML = `<img src="img/logo.svg">`
-//     } else {
-//         logoTag.innerHTML = `<img src="img/wordmark.svg">`
-//     }
-
-// })
-
-// logoAreaTag.addEventListener('mouseover', function (){
-//     logoTag.classList.add('hovered')
-// })
-
-// logoAreaTag.addEventListener('mouseleave', function (){
-//     logoTag.classList.remove('hovered')
-// })
-
-//logoTag.classList.add('hovered')
-
-
-
-// logoAreaTag.addEventListener('mouseleave', function (event){
-
-//     logoTag.classList.remove('hovered')
-
-//     // if (logoTag.classList.contains('hovered')){
-//     //     logoTag.innerHTML = `<img src="img/wordmark.svg">`
-//     // } else {
-//     //     logoTag.innerHTML = "gone"
-//     // }
-
-//     //logoTag.innerHTML = `<img src="img/logo.svg">`
-
-// })
+pageTitleAnimate.forEach(tag => {
+    tag.style.animation = `fadeInTitle 1.4s cubic-bezier(.72,0,.01,1) ${delay}s both`
+    delay = delay + 0.15
+})
 
