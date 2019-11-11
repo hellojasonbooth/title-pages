@@ -219,7 +219,6 @@ main {
             }
             
             h1.logo-alt {
-               /* position: absolute; */
                 opacity: 0;
             }
 
@@ -240,6 +239,15 @@ main {
 
     }
 
+}
+
+div.logo-area h1.main-logo span {
+    transform: translateY(-110px);
+
+    img {
+        width: auto;
+        height: auto;
+    }
 }
 
 h1.logo span:nth-child(1),
