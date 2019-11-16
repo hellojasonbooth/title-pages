@@ -368,3 +368,20 @@ footer {
 footer.animated {
     transform: translate3d(0, 0%, 0);
 }
+
+div.click {
+    position: fixed;
+    top: -80px;
+    left: -80px;
+    height: 80px;
+    width: 80px;
+    background-color: #1d1d1b;
+    color: $secondary-color;
+    font-size: 12px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    cursor: none;
+}
