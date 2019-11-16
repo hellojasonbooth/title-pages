@@ -15,6 +15,9 @@ $body-font: "neue-haas-grotesk-display";
 $break-small: 500px;
 $break-medium: 900px;
 
+html {
+    min-height: 100%;
+}
 
 body {
     background-color: $primary-color;
@@ -23,7 +26,7 @@ body {
     font-weight: 400;
     letter-spacing: 1.75px;
     line-height: 1.225;
-    height: 100%;
+    min-height: 100%;
     /* overflow: hidden; */
     /* -webkit-overflow-scrolling: touch; */
 }
