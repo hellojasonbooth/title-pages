@@ -24,6 +24,7 @@ body {
     letter-spacing: 1.75px;
     line-height: 1.225;
     height: 100%;
+    overflow: hidden;
 }
 
 ::selection {
@@ -225,8 +226,8 @@ main {
 
     section {
         position: fixed;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -314,8 +315,8 @@ div.stickers {
     top: 0;
     left: 0;
 
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
 }
 
 div.stickers img {
