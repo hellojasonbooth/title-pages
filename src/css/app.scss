@@ -189,6 +189,10 @@ div.menu {
         div {
             display: flex;
             justify-content: space-between;
+
+            @media screen and (max-width: $break-small) {
+                flex-direction: column;
+              }
         }
 
         h3 {
