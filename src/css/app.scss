@@ -132,6 +132,7 @@ div.menu {
 
     @media screen and (max-width: $break-medium) {
         width: 100vw;
+        padding: 20px 20px 0 20px;
       }
 
 
@@ -150,6 +151,10 @@ div.menu {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+
+                @media screen and (max-width: $break-medium) {
+                    padding: 20px 0;
+                  }
 
                 div.signature h4 span a img {
                     width: 26px;
