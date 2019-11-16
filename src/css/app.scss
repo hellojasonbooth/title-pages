@@ -12,6 +12,9 @@ $black-color: #000;
 $select-color: rgba(0, 0, 0, 0.26);
 $body-font: "neue-haas-grotesk-display";
 
+$break-small: 500px;
+$break-medium: 900px;
+
 
 body {
     background-color: $primary-color;
@@ -65,20 +68,18 @@ header {
     width: 100px;
     height: 100px;
     cursor: pointer;
-
+    
     div.burger-menu {
         height: 30px;
         position: absolute;
         transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
         transform: translate(-50%, 0%);
 
-        /* img {
-            -webkit-user-drag: none;
-            -khtml-user-drag: none;
-            -moz-user-drag: none;
-            -o-user-drag: none;
-            user-drag: none;
-        } */
+            /* @media screen and (max-width: $break-small) {
+                position: fixed;
+                right: 20px;
+                top: 40px;
+            } */
 
         div.burger-line {
             width: 30px;
@@ -114,6 +115,11 @@ div.menu {
     padding: 40px 40px 0 40px;
     overflow: scroll;
     z-index: 998;
+
+    @media screen and (max-width: $break-medium) {
+        width: 100vw;
+      }
+
 
         div.container {
             display: flex;
@@ -202,15 +208,21 @@ main {
 
         div.logo-area {
             position: relative;
-            width: 402px;
+            width: 530px;
 
             h1 {
-                max-width: 428px;
+                max-width: 530px;
                 transition: opacity 0.2s ease;
                 display: flex;
                 overflow: hidden;
                 padding: 20px;
+                transition: padding 0.4s ease;
                 align-items: center;
+
+                @media screen and (max-width: $break-medium) {
+                    padding: 60px;
+                  }
+
             }
 
             h1.logo {
@@ -242,7 +254,7 @@ main {
 }
 
 div.logo-area h1.main-logo span {
-    transform: translateY(-110px);
+    transform: translateY(-144px);
 
     img {
         width: auto;

@@ -35,7 +35,7 @@ const menuBurgerTag = areaTag.querySelector('div.burger-menu')
     mouseY = areaTag.offsetTop + (areaTag.clientHeight / 2)
 	}
   
-  window.addEventListener('resize', handleResize)
+
   
 
   	let speed = 0.2
@@ -51,6 +51,11 @@ const menuBurgerTag = areaTag.querySelector('div.burger-menu')
         menuBurgerTag.style.top = burgerY + 'px'
 
     	requestAnimationFrame(animate)
-  	}
+    }
 
-  animate()
+    window.addEventListener('resize', handleResize, animate)
+    
+    // temporary - but what we want to do
+    // is only have this animate if we are on desktop
+    animate()
+

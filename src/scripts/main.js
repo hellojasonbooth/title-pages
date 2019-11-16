@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
       footerTag.classList.add('animated')
     
-   }, 1100)
+   }, 1200)
 
 })
 
