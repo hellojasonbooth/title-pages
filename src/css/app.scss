@@ -32,6 +32,13 @@ body {
     background: $select-color; /* Gecko Browsers */
   }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 img {
     -webkit-user-drag: none;
     -khtml-user-drag: none;
@@ -113,7 +120,8 @@ div.menu {
     transform: translateX(100%);
     transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     padding: 40px 40px 0 40px;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     z-index: 998;
 
     @media screen and (max-width: $break-medium) {
@@ -127,12 +135,14 @@ div.menu {
             justify-content: space-between;
             height: 100%;
 
-            div.footer {
+            div.menu-footer {
                 padding: 40px 0;
                 font-size: 18px;
                 font-family: neue-haas-grotesk-display;
                 font-weight: 500;
                 letter-spacing: 0.5px;
+                display: flex;
+                justify-content: space-between;
             }
         }
 
@@ -186,6 +196,12 @@ div.menu {
             font-size: 14px;
             border: none;
             cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform:translateY(-6px);
+            box-shadow: 0 0 20px #00000033;
         }
 
     }
@@ -208,7 +224,7 @@ main {
 
         div.logo-area {
             position: relative;
-            width: 530px;
+            /* width: 530px; */
 
             h1 {
                 max-width: 530px;
@@ -219,19 +235,21 @@ main {
                 transition: padding 0.4s ease;
                 align-items: center;
 
-                @media screen and (max-width: $break-medium) {
-                    padding: 60px;
-                  }
+                @media screen and (max-width: $break-small) {
+                    padding: 20px 60px;
+                  } 
 
             }
 
             h1.logo {
                 position: absolute;
                 opacity: 1;
+                transition: opacity 0.2s ease;
             }
             
             h1.logo-alt {
                 opacity: 0;
+                transition: opacity 0.2s ease;
             }
 
         }
@@ -253,8 +271,20 @@ main {
 
 }
 
+div.logo-interaction--mask {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    width: 530px;
+    height: 130px;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    cursor: help;
+}
+
 div.logo-area h1.main-logo span {
-    transform: translateY(-144px);
+    transform: translateY(-154px);
 
     img {
         width: auto;
@@ -284,9 +314,15 @@ div.stickers img {
 }
 
 .blurred {
-    -webkit-filter: blur(8px);
+    -webkit-filter: blur(7px);
     transition: 0.3s filter ease;
-    filter: blur(8px);
+    filter: blur(7px);
+}
+
+.blurred-title {
+    -webkit-filter: blur(16px);
+    transition: 0.3s filter ease;
+    filter: blur(16px);
 }
 
 /* .sticker-slapped {

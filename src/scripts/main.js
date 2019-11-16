@@ -59,10 +59,11 @@ menuToggleTag.addEventListener('click', function(){
    // this is where we can add the blur to elements
    // when menu is open and remove the blur when
    // menu is closed
+   // blur some stuff
+   const blurredStickerTag = document.querySelectorAll('div.stickers img')
+   const blurredLogoTag = document.querySelectorAll('h1')
 
-   const blurredImageTag = document.querySelectorAll('img')
-
-   blurredImageTag.forEach(tag => {
+   blurredStickerTag.forEach(tag => {
 
       if (menuTag.classList.contains('open')) {
          tag.classList.add('blurred')
@@ -70,6 +71,14 @@ menuToggleTag.addEventListener('click', function(){
          tag.classList.remove('blurred')
       }
 
+     })
+
+     blurredLogoTag.forEach(tag => {
+         if (menuTag.classList.contains('open')) {
+            tag.classList.add('blurred-title')
+         } else {
+            tag.classList.remove('blurred-title')
+         }
      })
 
 })
@@ -90,6 +99,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
    }, 1200)
 
 })
+
 
 
 
