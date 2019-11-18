@@ -55,7 +55,6 @@ const menuBurgerTag = areaTag.querySelector('div.burger-menu')
 
     window.addEventListener('resize', handleResize, animateBurger)
     
-  
 
 
 
