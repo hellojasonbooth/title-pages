@@ -32,6 +32,12 @@ const addSticker = function (x, y) {
       number = 0
    }
 
+   setTimeout(function () {
+    
+      img.style.display = 'none'
+    
+   }, 5000)
+
 
 }
 
@@ -42,6 +48,7 @@ stickerTag.addEventListener("click", function (event) {
    addSticker(event.pageX, event.pageY)
    cursorTag.style.display = 'none'
 })
+
 
 // add stickers on mobile
 stickerTag.addEventListener("touchend", function (event) {
