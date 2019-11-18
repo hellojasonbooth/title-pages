@@ -208,11 +208,3 @@ const menuBurgerTag = areaTag.querySelector('div.burger-menu')
 
    }
     
-
-
-
-
-
-
-
-
