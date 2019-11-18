@@ -52,7 +52,6 @@ const addSticker = function (x, y) {
 stickerTag.addEventListener("click", function (event) {
    event.preventDefault()
    addSticker(event.pageX, event.pageY)
-   cursorTag.style.display = 'none'
 })
 
 
@@ -125,19 +124,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 })
 
 
-// here we can make a graphic follow a cursor
-// need a function first
 
-const cursorTag = document.querySelector('div.click')
-
-const moveCursorTag = function (x, y) {
-      cursorTag.style.left = x + 'px'
-      cursorTag.style.top = y + 'px'
-}
-
-document.addEventListener('mousemove', function (event) {
-   moveCursorTag(event.pageX, event.pageY)
-})
 
 
 

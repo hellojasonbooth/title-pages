@@ -40,7 +40,7 @@ const menuBurgerTag = areaTag.querySelector('div.burger-menu')
 
   	let speed = 0.2
 
-  	function animate() {
+  	function animateBurger() {
     	let distX = mouseX - burgerX
     	let distY = mouseY - burgerY
 
@@ -50,41 +50,39 @@ const menuBurgerTag = areaTag.querySelector('div.burger-menu')
         menuBurgerTag.style.left = (burgerX - areaTag.offsetLeft) + 'px'
         menuBurgerTag.style.top = burgerY + 'px'
 
-    	requestAnimationFrame(animate)
+    	requestAnimationFrame(animateBurger)
     }
 
-    window.addEventListener('resize', handleResize, animate)
+    window.addEventListener('resize', handleResize, animateBurger)
     
   
     // Only have this burger animate if we are on desktop
 
     if ("ontouchstart" in document.documentElement) {
-      // document.write("your device is a touch screen device.");
+      cursorTag.style.display = 'none'
     } else {
      // document.write("your device is NOT a touch device");
      // if we're on a desktop - we run the function
-     animate()
+     animateBurger()
+
+    // here we can make a graphic follow a cursor
+    // need a function first
+    const cursorTag = document.querySelector('div.click')
+    const moveCursorTag = function (x, y) {
+          cursorTag.style.left = x + 'px'
+          cursorTag.style.top = y + 'px'
+    }
+    document.addEventListener('mousemove', function (event) {
+      moveCursorTag(event.pageX, event.pageY)
+    })
+    document.addEventListener('click', function (event) {
+      cursorTag.style.display = 'none'
+    })
+
     }
 
 
 
 
-    // this is where we interact with the div over the logo
-    // and change opacity of the logos
-
-    const mainLogoTag = document.querySelector('h1.main-logo')
-    const altLogoTag = document.querySelector('h1.logo-alt')
-
-    const logoInteractionTag = document.querySelector('div.logo-interaction--mask')
-
-    logoInteractionTag.addEventListener('mouseover', function () {
-      mainLogoTag.style.opacity = '0'
-      altLogoTag.style.opacity = '1'
-    })
-
-    logoInteractionTag.addEventListener('mouseleave', function () {
-      mainLogoTag.style.opacity = '1'
-      altLogoTag.style.opacity = '0'
-    })
 
 
