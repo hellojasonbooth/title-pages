@@ -31,6 +31,10 @@ body {
     /* -webkit-overflow-scrolling: touch; */
 }
 
+.hidden {
+    overflow:hidden;
+}
+
 ::selection {
     background: $select-color; /* WebKit/Blink Browsers */
   }

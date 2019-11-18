@@ -1,4 +1,4 @@
-
+const bodyTag = document.querySelector('body')
 
 // stickers
 let number = 0
@@ -35,10 +35,19 @@ const addSticker = function (x, y) {
 
 }
 
-stickerTag.addEventListener("click", function (event){
+
+// add stickers desktop
+stickerTag.addEventListener("click", function (event) {
+   event.preventDefault()
    addSticker(event.pageX, event.pageY)
    cursorTag.style.display = 'none'
 })
+
+// add stickers on mobile
+stickerTag.addEventListener("touchend", function (event) {
+   event.preventDefault()
+   addSticker(event.pageX, event.pageY)
+ })
 
 
 
@@ -56,6 +65,7 @@ menuToggleTag.addEventListener('click', function(){
    //
    menuTag.classList.toggle('open')
    burgerTag.classList.toggle('active')
+   bodyTag.classList.toggle('hidden')
 
    // this is where we can add the blur to elements
    // when menu is open and remove the blur when
@@ -102,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 })
 
 
-// here we can make a div follow a cursor
+// here we can make a graphic follow a cursor
 // need a function first
 
 const cursorTag = document.querySelector('div.click')

@@ -55,14 +55,14 @@ const menuBurgerTag = areaTag.querySelector('div.burger-menu')
 
     window.addEventListener('resize', handleResize, animate)
     
-    // temporary - but what we want to do
-    // is only have this animate if we are on desktop
-    //animate()
+  
+    // Only have this burger animate if we are on desktop
 
     if ("ontouchstart" in document.documentElement) {
       // document.write("your device is a touch screen device.");
     } else {
      // document.write("your device is NOT a touch device");
+     // if we're on a desktop - we run the function
      animate()
     }
 
