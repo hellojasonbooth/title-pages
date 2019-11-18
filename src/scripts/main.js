@@ -253,7 +253,7 @@ const menuBurgerTag = areaTag.querySelector('div.burger-menu')
    const newLink = document.createElement("link");
       newLink.setAttribute("rel", "icon");
       newLink.setAttribute("type", "image/png");
-      newLink.setAttribute("href", faviconImages);
+      newLink.setAttribute("src", faviconImages);
    
       head.replaceChild(newLink, currentLink)
       currentLink = head.querySelector("link[rel='icon']");
