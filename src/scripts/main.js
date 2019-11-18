@@ -136,7 +136,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
  if ("ontouchstart" in document.documentElement) {
    // if we're on a mobile - we run the function
-   // bodyTag.style.backgroundColor = 'black'
    cursorTag.style.display = 'none'
  } else {
   // if we're on a desktop - we run the function
