@@ -101,6 +101,7 @@ delay = 0.5
 
 pageTitleAnimate.forEach(tag => {
     tag.style.animation = `fadeInTitle 1.4s cubic-bezier(.72,0,.01,1) ${delay}s both`
+    tag.style.WebkitAnimation = `fadeInTitle 1.4s cubic-bezier(.72,0,.01,1) ${delay}s both`
     delay = delay + 0.15
 })
 

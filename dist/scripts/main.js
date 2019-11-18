@@ -20,7 +20,13 @@ const addSticker = function (x, y) {
    const img = document.createElement("img")
    img.setAttribute("src", stickers[number])
    img.classList.add("sticker-slapped")
+   // cover the most common browsers
+   img.style.webkitTransform = "rotate(" + randomNum + "deg) translateX(" + (-50) + "%) translateY(" + (-50) + "%)"
+   img.style.MozTransform = "rotate(" + randomNum + "deg) translateX(" + (-50) + "%) translateY(" + (-50) + "%)"
+   img.style.msTransform = "rotate(" + randomNum + "deg) translateX(" + (-50) + "%) translateY(" + (-50) + "%)"
+   img.style.OTransform = "rotate(" + randomNum + "deg) translateX(" + (-50) + "%) translateY(" + (-50) + "%)"
    img.style.transform = "rotate(" + randomNum + "deg) translateX(" + (-50) + "%) translateY(" + (-50) + "%)"
+
    stickerTag.appendChild(img)
 
    img.style.left = x + "px"
