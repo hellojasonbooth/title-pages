@@ -76,7 +76,7 @@ menuToggleTag.addEventListener('click', function(){
 
    blurredStickerTag.forEach(tag => {
 
-      if (menuTag.classList.contains('open')) {
+      if (menuTag.classList.contains('open') && window.innerWidth > 900) {
          tag.classList.add('blurred')
       } else {
          tag.classList.remove('blurred')
@@ -85,7 +85,7 @@ menuToggleTag.addEventListener('click', function(){
      })
 
      blurredLogoTag.forEach(tag => {
-         if (menuTag.classList.contains('open')) {
+         if (menuTag.classList.contains('open') && window.innerWidth > 900) {
             tag.classList.add('blurred-title')
          } else {
             tag.classList.remove('blurred-title')
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
       footerTag.classList.add('animated')
     
-   }, 1200)
+   }, 1300)
 
 })
 
