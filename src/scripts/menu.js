@@ -61,7 +61,9 @@ const menuBurgerTag = areaTag.querySelector('div.burger-menu')
 
     if ("ontouchstart" in document.documentElement) {
       // if we're on a mobile - we run the function
-      cursorTag.style.opacity = '0.2'
+      document.addEventListener("touchend", function (event) {
+        cursorTag.style.opacity = '0.4'
+      })
     } else {
      // if we're on a desktop - we run the function
      animateBurger()
