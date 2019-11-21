@@ -189,7 +189,6 @@ const menuBurgerTag = areaTag.querySelector('div.burger-menu')
          // if we're on a mobile - we run stuff
          // remove div cursor follow
          cursorTag.style.display = 'none'
-         tapScreenTag.style.display = "block"
 
          document.addEventListener('touchend', function (event) {
             tapScreenTag.style.display = 'none'
@@ -197,9 +196,12 @@ const menuBurgerTag = areaTag.querySelector('div.burger-menu')
 
 
       } else {
-         // if we're on a desktop - we run the function
+         // if we're on a desktop
          // animates the burger
          animateBurger()
+
+         // removes from desktop
+         tapScreenTag.style.display = 'none'
 
          // here we can make a graphic follow a cursor
          // need a function first
