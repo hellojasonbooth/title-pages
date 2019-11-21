@@ -14,7 +14,10 @@ gulp.task("sass", function() {
     //we want to run "sass css/app.scss app.css --watch"
     return gulp.src("src/css/app.scss")
     .pipe(sourcemaps.init())
-    .pipe(autoprefixer())
+    .pipe(autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: false
+    }))
     .pipe(sass())
     .pipe(
         cleanCss({
