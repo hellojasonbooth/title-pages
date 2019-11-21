@@ -194,6 +194,9 @@ const menuBurgerTag = areaTag.querySelector('div.burger-menu')
             tapScreenTag.style.display = 'none'
          })
 
+         menuBurgerTag.style.right = 30 + 'px'
+         menuBurgerTag.style.top = 30 + 'px'
+
 
       } else {
          // if we're on a desktop
