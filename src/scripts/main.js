@@ -42,7 +42,7 @@ const addSticker = function (x, y) {
     
       img.style.display = 'none'
     
-   }, 5000)
+   }, 8000)
 
 
 }
@@ -183,11 +183,19 @@ const menuBurgerTag = areaTag.querySelector('div.burger-menu')
 
    // Only have this burger animate if we are on desktop
    const cursorTag = document.querySelector('div.click')
+   const tapScreenTag = document.querySelector('div.tap')
 
       if ("ontouchstart" in document.documentElement) {
          // if we're on a mobile - we run stuff
          // remove div cursor follow
          cursorTag.style.display = 'none'
+         tapScreenTag.style.display = "block"
+
+         document.addEventListener('touchend', function (event) {
+            tapScreenTag.style.display = 'none'
+         })
+
+
       } else {
          // if we're on a desktop - we run the function
          // animates the burger
@@ -204,6 +212,7 @@ const menuBurgerTag = areaTag.querySelector('div.burger-menu')
          })
          document.addEventListener('click', function (event) {
             cursorTag.style.display = 'none'
+            bodyTag.style.cursor = "auto"
          })
 
    }
