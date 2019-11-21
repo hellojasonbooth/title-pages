@@ -196,7 +196,7 @@ const menuBurgerTag = areaTag.querySelector('div.burger-menu')
 
          menuBurgerTag.style.position = 'fixed'
          menuBurgerTag.style.right = 10 + 'px'
-         menuBurgerTag.style.top = 30 + 'px'
+         menuBurgerTag.style.top = 40 + 'px'
 
 
       } else {
