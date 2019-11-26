@@ -1,5 +1,9 @@
 const bodyTag = document.querySelector('body')
 
+// if the menu is open we need to 
+// return a function as true
+let menuOpen = false
+
 // stickers
 let number = 0
 
@@ -39,15 +43,17 @@ const addSticker = function (x, y) {
    }
 
    setTimeout(function () {
-    
       img.style.display = 'none'
-    
    }, 8000)
 
 
-   // if (menuTag.classList.contains('open')) {
-   //    return
-   // }
+   // stop the function from executing if menu is open
+   if (menuOpen == true) {
+      alert('true')
+      //return
+   } else {
+      menuOpen = false
+   }
 
 
 }
@@ -108,6 +114,10 @@ menuToggleTag.addEventListener('click', function(){
             tag.classList.remove('blurred-title')
          }
      })
+
+     if (menuTag.classList.contains('open')) {
+         menuOpen = true
+     }
 
 })
 
