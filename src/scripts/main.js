@@ -45,6 +45,11 @@ const addSticker = function (x, y) {
    }, 8000)
 
 
+   // if (menuTag.classList.contains('open')) {
+   //    return
+   // }
+
+
 }
 
 
