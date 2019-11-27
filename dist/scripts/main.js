@@ -19,7 +19,9 @@ const stickerTag = document.querySelector("div.stickers")
 
 const addSticker = function (x, y) {
 
-   let randomNum = Math.floor(Math.random() * 45 - 45)
+   //let randomNum = 10 * (Math.floor(Math.random() * 5)) - 20
+   const num = Math.floor(Math.random() * 45) + 1
+   const randomNum = num * (Math.random() < 0.5 ? -1 : 1)
 
    const img = document.createElement("img")
    img.setAttribute("src", stickers[number])
@@ -89,9 +91,11 @@ menuToggleTag.addEventListener('click', function(){
      if (menuTag.classList.contains('open')) {
          menuOpen = true
          console.log('true')
+         footerTag.classList.add('blurred')
      } else {
          menuOpen = false
          console.log('false')
+         footerTag.classList.remove('blurred')
      }
 
    // this is where we can add the blur to elements
@@ -100,11 +104,13 @@ menuToggleTag.addEventListener('click', function(){
    // blur some stuff
    const blurredStickerTag = document.querySelectorAll('div.stickers img')
    const blurredLogoTag = document.querySelectorAll('h1')
+ 
 
    blurredStickerTag.forEach(tag => {
 
       if (menuTag.classList.contains('open') && window.innerWidth > 900) {
          tag.classList.add('blurred')
+
       } else {
          tag.classList.remove('blurred')
       }
@@ -158,24 +164,24 @@ const menuBurgerTag = areaTag.querySelector('div.burger-menu')
   
   areaTag.addEventListener("mousemove", function (event) {
    	mouseX = event.clientX
-    mouseY = event.clientY
+      mouseY = event.clientY
     
   })
   
-  areaTag.addEventListener("mouseleave", function () {
-   	mouseX = areaTag.offsetLeft + (areaTag.clientWidth / 2)
-  	mouseY = areaTag.offsetTop + (areaTag.clientHeight / 2)
+   areaTag.addEventListener("mouseleave", function () {
+      mouseX = areaTag.offsetLeft + (areaTag.clientWidth / 2)
+  	   mouseY = areaTag.offsetTop + (areaTag.clientHeight / 2)
   })
   
   const handleResize = function () {
-   
-    
-    burgerX = areaTag.offsetLeft + (areaTag.clientWidth / 2)
-    burgerY = areaTag.offsetTop + (areaTag.clientHeight / 2)
-    
-    mouseX = areaTag.offsetLeft + (areaTag.clientWidth / 2)
-    mouseY = areaTag.offsetTop + (areaTag.clientHeight / 2)
-	}
+      
+      burgerX = areaTag.offsetLeft + (areaTag.clientWidth / 2)
+      burgerY = areaTag.offsetTop + (areaTag.clientHeight / 2)
+         
+      mouseX = areaTag.offsetLeft + (areaTag.clientWidth / 2)
+      mouseY = areaTag.offsetTop + (areaTag.clientHeight / 2)
+
+   }
 
   	let speed = 0.2
 
