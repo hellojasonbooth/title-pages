@@ -19,7 +19,7 @@ const stickerTag = document.querySelector("div.stickers")
 
 const addSticker = function (x, y) {
 
-   let randomNum = Math.floor(Math.random() * 45 - 20)
+   let randomNum = Math.floor(Math.random() * 45 - 45)
 
    const img = document.createElement("img")
    img.setAttribute("src", stickers[number])
