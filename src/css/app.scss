@@ -363,6 +363,7 @@ div.stickers img {
     position: absolute;
     transform: translate(-50%, -50%);
     will-change: transform;
+    width: auto;
 }
 
 .blurred {

@@ -1,16 +1,16 @@
 const bodyTag = document.querySelector('body')
 
-// if the menu is open we need to 
-// return a function as true
-let menuOpen = false
-
 // stickers
 let number = 0
 
 const stickers = [
-   "img/bottle_sticker.svg",
-   "img/drip_sticker.svg",
-   "img/planet_sticker.svg"
+   "img/bottle.svg",
+   "img/globe.svg",
+   "img/lightbulb.svg",
+   "img/planets.svg",
+   "img/protest.svg",
+   "img/timer.svg",
+   "img/water.svg"
 ]
 
 const stickerTag = document.querySelector("div.stickers")
@@ -19,7 +19,7 @@ const stickerTag = document.querySelector("div.stickers")
 
 const addSticker = function (x, y) {
 
-   let randomNum = Math.floor(Math.random() * 45 - 45)
+   let randomNum = Math.floor(Math.random() * 45 - 20)
 
    const img = document.createElement("img")
    img.setAttribute("src", stickers[number])
@@ -47,22 +47,15 @@ const addSticker = function (x, y) {
    }, 8000)
 
 
-   // stop the function from executing if menu is open
-   if (menuOpen == true) {
-      alert('true')
-      //return
-   } else {
-      menuOpen = false
-   }
-
-
 }
 
 
 // add stickers desktop
 stickerTag.addEventListener("click", function (event) {
    event.preventDefault()
-   addSticker(event.pageX, event.pageY)
+   if (!menuOpen) {
+      addSticker(event.pageX, event.pageY)
+    }
 })
 
 
@@ -83,12 +76,23 @@ const menuTag = document.querySelector('div.menu')
 
 const bg = document.querySelector('body')
 
+// if the menu is open we need to 
+// return a function as true
+let menuOpen = false
 
 menuToggleTag.addEventListener('click', function(){
    //
    menuTag.classList.toggle('open')
    burgerTag.classList.toggle('active')
    bodyTag.classList.toggle('hidden')
+
+     if (menuTag.classList.contains('open')) {
+         menuOpen = true
+         console.log('true')
+     } else {
+         menuOpen = false
+         console.log('false')
+     }
 
    // this is where we can add the blur to elements
    // when menu is open and remove the blur when
@@ -115,9 +119,6 @@ menuToggleTag.addEventListener('click', function(){
          }
      })
 
-     if (menuTag.classList.contains('open')) {
-         menuOpen = true
-     }
 
 })
 
@@ -237,4 +238,4 @@ const menuBurgerTag = areaTag.querySelector('div.burger-menu')
          })
 
    }
-    
+   
