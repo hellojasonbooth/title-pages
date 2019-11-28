@@ -15,11 +15,8 @@ const stickers = [
 
 const stickerTag = document.querySelector("div.stickers")
 
-// const drawAreaTag = document.querySelector("main section.draw-area")
-
 const addSticker = function (x, y) {
 
-   //let randomNum = 10 * (Math.floor(Math.random() * 5)) - 20
    const num = Math.floor(Math.random() * 45) + 1
    const randomNum = num * (Math.random() < 0.5 ? -1 : 1)
 
@@ -82,8 +79,8 @@ const bg = document.querySelector('body')
 // return a function as true
 let menuOpen = false
 
-menuToggleTag.addEventListener('click', function(){
-   //
+menuToggleTag.addEventListener('click', function() {
+
    menuTag.classList.toggle('open')
    burgerTag.classList.toggle('active')
    bodyTag.classList.toggle('hidden')
@@ -149,7 +146,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 // menu burger is tracked by the mouse movement
-
 const areaTag = document.querySelector('header')
 
 const menuBurgerTag = areaTag.querySelector('div.burger-menu')
@@ -220,7 +216,6 @@ const menuBurgerTag = areaTag.querySelector('div.burger-menu')
          menuBurgerTag.style.right = 5 + 'px'
          menuBurgerTag.style.top = 35 + 'px'
 
-
       } else {
          // if we're on a desktop
          // animates the burger
@@ -244,4 +239,73 @@ const menuBurgerTag = areaTag.querySelector('div.burger-menu')
          })
 
    }
+
+
+
+
+   // here we can animate the title on page load
+   // each element is set up to animate with a delay
+   const pageTitleAnimate = document.querySelectorAll('div.logo-area h1.main-logo span')
+
+   delay = 0.5
+
+   pageTitleAnimate.forEach(tag => {
+      tag.style.animation = `fadeInTitle 1.4s cubic-bezier(.72,0,.01,1) ${delay}s both`
+      tag.style.WebkitAnimation = `fadeInTitle 1.4s cubic-bezier(.72,0,.01,1) ${delay}s both`
+      delay = delay + 0.15
+   })
+
+
+   // this is where we interact with the div over the logo
+   // and change opacity of the logos
+
+   const mainLogoTag = document.querySelector('h1.main-logo')
+   const altLogoTag = document.querySelector('h1.logo-alt')
+
+   const logoInteractionTag = document.querySelector('div.logo-interaction--mask')
+
+   logoInteractionTag.addEventListener('mouseover', function () {
+      mainLogoTag.style.opacity = '0'
+      altLogoTag.style.opacity = '1'
+   })
+
+   logoInteractionTag.addEventListener('mouseleave', function () {
+      mainLogoTag.style.opacity = '1'
+      altLogoTag.style.opacity = '0'
+   })
    
+
+
+
+
+   // animated favicon
+
+   var faviconImages = [
+      "img/img-01.png", "img/img-02.png", "img/img-03.png", "img/img-04.png",
+      "img/img-05.png", "img/img-06.png", "img/img-07.png", "img/img-08.png",
+      "img/img-09.png", "img/img-10.png", "img/img-11.png", "img/img-12.png",
+      "img/img-13.png", "img/img-14.png", "img/img-15.png", "img/img-16.png",
+      "img/img-17.png", "img/img-18.png"
+      ],
+       
+    imageCounter = 0
+    
+    const head = document.querySelector('head');
+    
+    let currentLink = head.querySelector("link[rel='shortcut icon']");
+    
+    setInterval(function() {
+       const newLink = document.createElement("link");
+       newLink.setAttribute("rel", "icon");
+       newLink.setAttribute("type", "image/png");
+       newLink.setAttribute("href", faviconImages[imageCounter]);
+    
+       head.replaceChild(newLink, currentLink)
+       currentLink = head.querySelector("link[rel='icon']");
+         
+       if(imageCounter == faviconImages.length -1) {
+          imageCounter = 0
+       } else {
+          imageCounter++
+       }
+    }, 250)
