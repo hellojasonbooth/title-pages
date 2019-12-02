@@ -25,9 +25,11 @@ body {
     font-weight: 400;
     letter-spacing: 1.5px;
     line-height: 1.225;
-    height: 100%;
+    height: 100vh;
+    width: 100vw;
     color: $black-color;
     cursor: none;
+    position: relative;
 }
 
 .hidden {
