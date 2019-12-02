@@ -50,12 +50,12 @@ const addSticker = function (x, y) {
 
 
 // add stickers on mobile
-stickerTag.addEventListener("touchstart", mobStickers, false)
+// stickerTag.addEventListener("touchstart", mobStickers, false)
 
-function mobStickers(event) {
-   event.preventDefault()
-   addSticker(event.pageX, event.pageY)
-}
+// function mobStickers(event) {
+//    event.preventDefault()
+//    addSticker(event.pageX, event.pageY)
+// }
 
 
 // add stickers desktop
