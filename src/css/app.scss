@@ -404,6 +404,7 @@ footer {
     transition: transform 1.2s cubic-bezier(.72,0,.01,1);
     will-change: transform;
     z-index: 997;
+    text-align:center;
 
     @media screen and (max-width: $break-small) {
         padding: 30px 20px;
