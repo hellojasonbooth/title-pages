@@ -49,6 +49,15 @@ const addSticker = function (x, y) {
 }
 
 
+// add stickers on mobile
+stickerTag.addEventListener("touchstart", mobStickers, false)
+
+function mobStickers(event) {
+   event.preventDefault()
+   addSticker(event.pageX, event.pageY)
+}
+
+
 // add stickers desktop
 stickerTag.addEventListener("click", function (event) {
    event.preventDefault()
@@ -58,11 +67,12 @@ stickerTag.addEventListener("click", function (event) {
 })
 
 
+
 // add stickers on mobile
-stickerTag.addEventListener("touchend", function (event) {
-   event.preventDefault()
-   addSticker(event.pageX, event.pageY)
- })
+// stickerTag.addEventListener("touchend", function (event) {
+//    event.preventDefault()
+//    addSticker(event.pageX, event.pageY)
+//  })
 
 
 
